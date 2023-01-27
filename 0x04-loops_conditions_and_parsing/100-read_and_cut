@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# prints contents of file - /etc/passwd
+#always prints username, user id, howe directory for the user
+
+while read -r passwd; do
+    echo "$passwd" | cut -d ':' -f1,3,6
+done < "/etc/passwd"
