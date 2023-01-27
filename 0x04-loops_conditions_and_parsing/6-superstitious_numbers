@@ -4,14 +4,17 @@
 #+ 'bad luck from Japan' on the 9th iteration and prints the number and
 #+ 'bad luck from Italy' on the 17th iteration
 
+china="bad luck from China"
+japan="bad luck from Japan"
+italy="bad luck from Italy"
 i=0
 while ((i++ < 20)); do
     echo "$i"
     if ((i == 4)); then
-        echo "bad luck from China"
+        echo "$china"
     elif ((i == 9)); then
-        echo "bad luck from Japan"
+        echo "$japan"
     elif ((i == 17)); then
-        echo "bad luck from Italy"
+        echo "$italy"
     fi
 done
