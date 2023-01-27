@@ -10,11 +10,18 @@ italy="bad luck from Italy"
 i=0
 while ((i++ < 20)); do
     echo "$i"
-    if ((i == 4)); then
+    case $i in
+
+    4)
         echo "$china"
-    elif ((i == 9)); then
+        ;;
+    
+    9)
         echo "$japan"
-    elif ((i == 17)); then
+        ;;
+
+    17)
         echo "$italy"
-    fi
+        ;;
+    esac
 done
