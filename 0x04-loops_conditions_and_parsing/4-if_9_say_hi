@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# prints 'Best School' 10 times but at the 9th time print hi
+
+word="Best School"
+i=0
+while ((i++ < 10)); do
+    echo "$word"
+    if ((i == 9)); then
+        echo "Hi"
+    fi
+done
