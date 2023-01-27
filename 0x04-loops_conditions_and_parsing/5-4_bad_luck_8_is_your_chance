@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# using a while that iterates 10 times, prints 'bad luck' on the 4th iteration
+#+ prints 'good luck' on the 8th iteration and prints 'Best School' every other iteration
+
+bad="bad luck"
+good="good luck"
+text="Best School"
+i=0
+while ((i++ < 10)); do
+    if ((i == 4)); then
+        echo "$bad"
+    elif ((i == 8)); then
+        echo "$good"
+    else
+        echo "$text"
+    fi
+done
