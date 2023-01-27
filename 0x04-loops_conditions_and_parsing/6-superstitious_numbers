@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# using while loop that iterates and displays numbers from 1 - 20
+#+ prints "bad luck from China" on the 4th iteration, prints the number and
+#+ 'bad luck from Japan' on the 9th iteration and prints the number and
+#+ 'bad luck from Italy' on the 17th iteration
+
+i=0
+while ((i++ < 20)); do
+    echo "$i"
+    if ((i == 4)); then
+        echo "bad luck from China"
+    elif ((i == 9)); then
+        echo "bad luck from Japan"
+    elif ((i == 17)); then
+        echo "bad luck from Italy"
+    fi
+done
