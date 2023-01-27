@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# emulates a clock and prints up to 12 hours 59 minutes
+
+hour=0
+minute=0
+while ((minute++ < 59)); do
+    if ((hour == 0)); then
+        echo "Hour: $hour"
+        ((hour++))
+    fi
+    echo "$minute"
+    if ((minute == 59 && hour <= 12)); then
+        echo "Hour: $hour"
+        ((minute = 0))
+        ((hour++))
+    fi
+done
