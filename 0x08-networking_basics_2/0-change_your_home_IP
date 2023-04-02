@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 # Overwrites the systems hosts file
 
-echo -e "127.0.0.2 \t localhost\n8.8.8.8 \t facebook.com" > /etc/hosts
+cp /etc/hosts ~/hosts.new
+echo "127.0.0.2 \tlocalhost" > ~/hosts.new
+echo "8.8.8.8 \tfacebook.com" >> ~/hosts.new
+cp -f ~/hosts.new /etc/hosts
