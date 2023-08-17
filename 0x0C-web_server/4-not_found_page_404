@@ -5,7 +5,25 @@ sudo apt-get install -y nginx
 echo "Hello World!" > index.html
 sudo mv index.html /var/www/html
 
+# set up redirect
+SERVER_CONFIG=\
+"server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
+	server_name _;
+	location / {
+		try_files \$uri \$uri/ =404;
+	}
+	if (\$request_filename ~ redirect_me){
+		rewrite ^ https://sketchfab.com/bluepeno/models permanent;
+	}
+}"
 
+bash -c "echo -e '$SERVER_CONFIG' > /etc/nginx/sites-enabled/default"
+
+# set up 404-error
 echo "Ceci n'est pas une page" > 404.html
 sudo mv 404.html /var/www/html
 echo "server {
